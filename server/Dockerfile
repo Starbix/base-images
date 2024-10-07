@@ -43,6 +43,7 @@ COPY bin/* ./
 RUN ./build-libjxl.sh
 RUN ./build-libheif.sh
 RUN ./build-libraw.sh
+RUN ./build-libjxl.sh
 RUN ./build-imagemagick.sh
 RUN ./build-libvips.sh
 RUN ./install-ffmpeg.sh
