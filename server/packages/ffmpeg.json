@@ -1,5 +1,6 @@
 {
     "name": "ffmpeg",
+    "repository": "jellyfin/jellyfin-ffmpeg",
     "version": "7.1.1-5",
     "sha256": {
         "amd64": "9aad00561eb962b79b821014b12f14912807b033987e0eee5492a0eebdb40db6",
