@@ -7,14 +7,14 @@
       "defaultRegistryUrlTemplate": "https://api.github.com/repos/jellyfin/jellyfin-ffmpeg/releases",
       "format": "json",
       "transformTemplates": [
-        "{ \"releases\": $map($[prerelease = false], function($r) { { \"version\": $replace($r.tag_name, /^v/, \"\"), \"digest\": $split($filter($r.assets, function($a) { $contains($a.name, \"-trixie_amd64.deb\") })[0].digest, \":\")[1] } }) }"
+        "{ \"releases\": $map($[prerelease = false and $count($filter(assets, function($a) { $contains($a.name, \"-trixie_amd64.deb\") and $exists($a.digest) })) > 0], function($r) { { \"version\": $replace($r.tag_name, /^v/, \"\"), \"digest\": $split($filter($r.assets, function($a) { $contains($a.name, \"-trixie_amd64.deb\") })[0].digest, \":\")[1] } }) }"
       ]
     },
     "jellyfin-ffmpeg-trixie-arm64": {
       "defaultRegistryUrlTemplate": "https://api.github.com/repos/jellyfin/jellyfin-ffmpeg/releases",
       "format": "json",
       "transformTemplates": [
-        "{ \"releases\": $map($[prerelease = false], function($r) { { \"version\": $replace($r.tag_name, /^v/, \"\"), \"digest\": $split($filter($r.assets, function($a) { $contains($a.name, \"-trixie_arm64.deb\") })[0].digest, \":\")[1] } }) }"
+        "{ \"releases\": $map($[prerelease = false and $count($filter(assets, function($a) { $contains($a.name, \"-trixie_arm64.deb\") and $exists($a.digest) })) > 0], function($r) { { \"version\": $replace($r.tag_name, /^v/, \"\"), \"digest\": $split($filter($r.assets, function($a) { $contains($a.name, \"-trixie_arm64.deb\") })[0].digest, \":\")[1] } }) }"
       ]
     }
   },
