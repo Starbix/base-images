@@ -44,7 +44,8 @@
   "packageRules": [
     {
       "matchDepNames": ["jellyfin/jellyfin-ffmpeg:amd64", "jellyfin/jellyfin-ffmpeg:arm64"],
-      "groupName": "jellyfin-ffmpeg"
+      "groupName": "jellyfin-ffmpeg",
+      "versioning": "loose"
     }
   ]
 }
